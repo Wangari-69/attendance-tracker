@@ -1,13 +1,11 @@
-import React from 'react';
+import '../index.css';
 
-function Student({ student, onToggle }) {
-  // TODO 5: Add an onClick to the button to trigger onToggle with student id
-
+function Student({ name, present, onToggle }) {
   return (
-    <div>
-      <span>{student.name}</span>
-      <button>
-        {student.present ? 'Mark Absent' : 'Mark Present'}
+    <div className={`student-card ${present ? 'present' : 'absent'}`}>
+      <span>{name}</span>
+      <button className="toggle-btn" onClick={onToggle}>
+        {present ? 'Mark Absent' : 'Mark Present'}
       </button>
     </div>
   );
